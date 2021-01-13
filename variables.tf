@@ -16,7 +16,7 @@ variable "ttl" {
 }
 variable "web_node_count" {
   description = "number of worker nodes"
-  default     = "5"
+  default     = "1"
 }
 
 variable "ssh_user" {
