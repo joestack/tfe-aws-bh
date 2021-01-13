@@ -7,10 +7,10 @@ provider "aws" {
     version = "=2.55.0"
 }
 
-resource "aws_key_pair" "joestack_aws" {
-  key_name   = "joestack_aws"
-  public_key = var.pub_key
-}
+#resource "aws_key_pair" "joestack_aws" {
+#  key_name   = "joestack_aws"
+#  public_key = var.pub_key
+#}
 
 
 data "aws_availability_zones" "available" {}
