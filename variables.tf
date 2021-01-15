@@ -35,18 +35,18 @@ variable "ssh_user" {
   default     = "ubuntu"
 }
 
-variable "key_name" {
-  description = "the public key to be used to access the bastin host"
-  default     = "joestack"
-}
+#variable "key_name" {
+#  description = "the public key to be used to access the bastion host"
+#  default     = "joestack"
+#}
 
 variable "pub_key" {
-  description = "the public key to be used to access the ansible nodes"
+  description = "the public key to be used to access the bastion host and ansible nodes"
   default     = "joestack"
 }
 
-variable "id_rsa_aws" {
-  description = "the private ssh key used by the bastion host to get access to the ansible nodes"
+variable "priv_key" {
+  description = "the private key to be used to access the bastion host and ansible nodes"
 }
 
 variable "dns_domain" {

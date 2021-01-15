@@ -157,7 +157,7 @@ resource "aws_instance" "nat" {
   subnet_id                   = aws_subnet.dmz_subnet.id
   associate_public_ip_address = "true"
   vpc_security_group_ids      = [aws_security_group.nat.id]
-  key_name                    = var.key_name
+  key_name                    = var.pub_key # old:var.key_name
   source_dest_check           = false
 
   tags = {

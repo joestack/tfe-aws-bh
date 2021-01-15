@@ -8,11 +8,11 @@ resource "aws_instance" "bastionhost" {
   private_ip                  = cidrhost(aws_subnet.dmz_subnet.cidr_block, 10)
   associate_public_ip_address = "true"
   vpc_security_group_ids      = [aws_security_group.bastionhost.id]
-  key_name                    = var.key_name
+  key_name                    = var.pub_key
 
   user_data = <<-EOF
               #!/bin/bash
-              echo "${var.id_rsa_aws}" >> /home/ubuntu/.ssh/id_rsa
+              echo "${var.priv_key}" >> /home/ubuntu/.ssh/id_rsa
               chown ubuntu /home/ubuntu/.ssh/id_rsa
               chgrp ubuntu /home/ubuntu/.ssh/id_rsa
               chmod 600 /home/ubuntu/.ssh/id_rsa
