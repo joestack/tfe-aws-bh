@@ -12,7 +12,7 @@ resource "aws_instance" "bastionhost" {
 
   user_data = <<-EOF
               #!/bin/bash
-              echo "${var.priv_key}" >> /home/ubuntu/.ssh/id_rsa
+              echo "${local.priv_key}" >> /home/ubuntu/.ssh/id_rsa
               chown ubuntu /home/ubuntu/.ssh/id_rsa
               chgrp ubuntu /home/ubuntu/.ssh/id_rsa
               chmod 600 /home/ubuntu/.ssh/id_rsa

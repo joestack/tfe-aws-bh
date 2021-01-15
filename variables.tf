@@ -49,6 +49,11 @@ variable "priv_key" {
   description = "the private key to be used to access the bastion host and ansible nodes"
 }
 
+variable "pri_key" {
+  description = "the private key to be used to access the bastion host and ansible nodes"
+}
+
+
 variable "dns_domain" {
   description = "DNS domain suffix"
   default     = "joestack.xyz"
@@ -65,4 +70,6 @@ locals {
   )
 }
 
-
+locals {
+  priv_key = base64decode(var.pri_key)
+}
