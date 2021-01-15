@@ -22,8 +22,6 @@ resource "aws_instance" "bastionhost" {
 
   tags = {
     Name        = "bastionhost-${var.name}"
-    TTL         = var.ttl
-    Owner       = var.owner             
   }
 }
 
@@ -39,8 +37,6 @@ resource "aws_instance" "web_nodes" {
 
   tags = {
     Name        = format("web-%02d", count.index + 1)
-    TTL         = var.ttl
-    Owner       = var.owner
   }
 }
 
@@ -55,7 +51,5 @@ resource "aws_instance" "web_nodes" {
 
 #   tags = {
 #     Name        = format("api-%02d", count.index + 1)
-#     TTL         = var.ttl
-#     Owner       = var.owner
 #   }
 # }

@@ -3,22 +3,14 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
-variable "owner" {
-  description = "Owner of this deployment"
-}
-
 variable "name" {
   description = "Name of this deployment"
 }
 
-variable "ttl" {
-  description = "Time to live before destroyed"
-}
 variable "web_node_count" {
   description = "number of worker nodes"
-  default     = "1"
+  default     = "2"
 }
-
 
 variable "instance_type" {
   description = "instance size to be used for worker nodes"
@@ -35,19 +27,10 @@ variable "ssh_user" {
   default     = "ubuntu"
 }
 
-#variable "key_name" {
-#  description = "the public key to be used to access the bastion host"
-#  default     = "joestack"
-#}
-
 variable "pub_key" {
   description = "the public key to be used to access the bastion host and ansible nodes"
   default     = "joestack"
 }
-
-#variable "priv_key" {
-#  description = "the private key to be used to access the bastion host and ansible nodes"
-#}
 
 variable "pri_key" {
   description = "the base64 encoded private key to be used to access the bastion host and ansible nodes"

@@ -50,8 +50,6 @@ resource "aws_vpc" "hashicorp_vpc" {
 
   tags = {
     Name        = "${var.name}-vpc"
-    TTL         = var.ttl
-    Owner       = var.owner
   }
 }
 
@@ -162,8 +160,6 @@ resource "aws_instance" "nat" {
 
   tags = {
     Name        = "nat-instance"
-    TTL         = var.ttl
-    Owner       = var.owner
   }
 }
 
@@ -173,8 +169,6 @@ resource "aws_elb" "web-elb" {
 
   tags = {
     Name        = "web-elb"
-    TTL         = var.ttl
-    Owner       = var.owner
   }
 
   subnets         = aws_subnet.pub_web_subnet.*.id
