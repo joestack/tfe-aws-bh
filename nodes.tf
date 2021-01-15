@@ -34,16 +34,7 @@ resource "aws_instance" "web_nodes" {
   subnet_id                   = element(aws_subnet.web_subnet.*.id, count.index + 1)
   associate_public_ip_address = "false"
   vpc_security_group_ids      = [aws_security_group.web.id]
-  #key_name                    = var.key_name
-
-
-  user_data = <<-EOF
-              #!/bin/bash
-              echo "${var.pub_key}" >> /home/ubuntu/.ssh/id_rsa.pub
-              chown ubuntu /home/ubuntu/.ssh/id_rsa.pub
-              chgrp ubuntu /home/ubuntu/.ssh/id_rsa.pub
-              chmod 664 /home/ubuntu/.ssh/id_rsa.pub
-              EOF
+  key_name                    = var.pub_key
 
 
   tags = {
@@ -60,7 +51,7 @@ resource "aws_instance" "web_nodes" {
 #   subnet_id                   = element(aws_subnet.api_subnet.*.id, count.index + 1)
 #   associate_public_ip_address = "false"
 #   vpc_security_group_ids      = [aws_security_group.api.id]
-#   key_name                    = var.key_name
+#   key_name                    = var.pub_key_n
 
 #   tags = {
 #     Name        = format("api-%02d", count.index + 1)

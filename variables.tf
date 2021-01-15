@@ -34,12 +34,13 @@ variable "web_subnet_count" {
   default     = "2"
 }
 
-variable "pub_key" {
-  description = "the content of the public key to be used on the ansible nodes"
+variable "key_name" {
+  description = "the public key to be used to access the bastin host"
+  default     = "joern"
 }
 
-variable "key_name" {
-  description = "The name of the public key that is available within your AWS region to get access to the bastion host"
+variable "pub_key" {
+  description = "the public key to be used to access the ansible nodes"
   default     = "joestack"
 }
 
