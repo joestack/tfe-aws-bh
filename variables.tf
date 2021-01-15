@@ -19,10 +19,6 @@ variable "web_node_count" {
   default     = "1"
 }
 
-variable "ssh_user" {
-  description = "default ssh user to get access to an instance"
-  default     = "ubuntu"
-}
 
 variable "instance_type" {
   description = "instance size to be used for worker nodes"
@@ -34,9 +30,14 @@ variable "web_subnet_count" {
   default     = "2"
 }
 
+variable "ssh_user" {
+  description = "default ssh user to get access to an instance"
+  default     = "ubuntu"
+}
+
 variable "key_name" {
   description = "the public key to be used to access the bastin host"
-  default     = "joern"
+  default     = "joestack"
 }
 
 variable "pub_key" {
