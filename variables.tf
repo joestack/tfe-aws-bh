@@ -45,14 +45,13 @@ variable "pub_key" {
   default     = "joestack"
 }
 
-variable "priv_key" {
-  description = "the private key to be used to access the bastion host and ansible nodes"
-}
+#variable "priv_key" {
+#  description = "the private key to be used to access the bastion host and ansible nodes"
+#}
 
 variable "pri_key" {
-  description = "the private key to be used to access the bastion host and ansible nodes"
+  description = "the base64 encoded private key to be used to access the bastion host and ansible nodes"
 }
-
 
 variable "dns_domain" {
   description = "DNS domain suffix"

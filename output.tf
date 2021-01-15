@@ -1,5 +1,5 @@
 output "Bastionhost_public_IP" {
-  value = aws_instance.bastionhost.public_ip
+  value = "ssh ${var.ssh_user}@${aws_instance.bastionhost.public_ip}"
 }
 
 output "Bastionhost_DNS" {
