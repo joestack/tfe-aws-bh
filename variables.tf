@@ -4,7 +4,7 @@ variable "aws_region" {
 }
 
 variable "name" {
-  description = "Name of this deployment"
+  description = "Unique name of the deployment"
 }
 
 variable "web_node_count" {
